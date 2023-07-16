@@ -1,13 +1,40 @@
 const container = document.querySelector(".container");
+const button = document.querySelector(".grid-val");
 
-const squares = 16;
+createGrids(16);
 
-for (let i = 0; i < squares ** 2; i++) {
-  const div = document.createElement("div");
-  div.classList.add("grid");
-  div.style.width = (container.clientWidth / squares - 2).toString() + "px";
-  div.style.height = (container.clientHeight / squares - 2).toString() + "px";
-  container.appendChild(div);
+button.addEventListener("click", () => {
+  const sideSquares = prompt(
+    "Enter number of Squares on each side of the grid:(Maximum 100)"
+  );
+  if (sideSquares >= 100) {
+    const answer = confirm(
+      "Too many Squares! This may crash your browser. Are you sure?"
+    );
+    if (!answer) {
+      sideSquares = 16;
+    }
+  }
+  removeGrids();
+  createGrids(sideSquares);
+});
+
+function createGrids(sideSquares) {
+  for (let i = 0; i < sideSquares ** 2; i++) {
+    const div = document.createElement("div");
+    div.classList.add("grid");
+    div.style.width =
+      (container.clientWidth / sideSquares - 2).toString() + "px";
+    div.style.height =
+      (container.clientHeight / sideSquares - 2).toString() + "px";
+    container.appendChild(div);
+  }
+}
+
+function removeGrids() {
+  while (container.hasChildNodes()) {
+    container.removeChild(container.firstChild);
+  }
 }
 
 container.addEventListener(
