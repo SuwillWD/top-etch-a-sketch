@@ -25,14 +25,20 @@ body {
   border: 1px solid black;
 }
 
-.grid-val {
+.buttons {
   margin: 20px 0;
+}
+
+.grid-val,
+.random-colors,
+.black-color {
   padding: 10px 20px;
   font-size: 18px;
   color: white;
   background-color: green;
 }
 
-.grid-val:hover {
+.grid-val:hover,
+.random-colors:hover {
   box-shadow: 0 0 10px black;
 }

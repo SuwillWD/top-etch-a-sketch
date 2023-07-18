@@ -1,9 +1,11 @@
 const container = document.querySelector(".container");
-const button = document.querySelector(".grid-val");
+const grids = document.querySelector(".grid-val");
+const blackColor = document.querySelector(".black-color");
+const randomColors = document.querySelector(".random-colors");
 
 createGrids(16);
 
-button.addEventListener("click", () => {
+grids.addEventListener("click", () => {
   const sideSquares = prompt(
     "Enter number of Squares on each side of the grid:(Maximum 100)"
   );
@@ -37,10 +39,31 @@ function removeGrids() {
   }
 }
 
-container.addEventListener(
-  "mouseover",
-  (event) => {
-    event.target.style.backgroundColor = "black";
-  },
-  false
-);
+blackColor.addEventListener("click", () => {
+  black();
+});
+
+randomColors.addEventListener("click", () => {
+  random();
+});
+
+const boxes = container.querySelectorAll(".grid");
+
+function black() {
+  boxes.forEach((box) => {
+    box.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = "black";
+    });
+  });
+}
+
+function random() {
+  boxes.forEach((box) => {
+    box.addEventListener("mouseover", (event) => {
+      const red = Math.floor(Math.random() * 255);
+      const blue = Math.floor(Math.random() * 255);
+      const green = Math.floor(Math.random() * 255);
+      event.target.style.backgroundColor = `rgb(${red}, ${blue}, ${green})`;
+    });
+  });
+}
