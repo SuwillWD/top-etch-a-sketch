@@ -39,17 +39,13 @@ function removeGrids() {
   }
 }
 
-blackColor.addEventListener("click", () => {
-  black();
-});
+blackColor.onclick = () => black();
 
-randomColors.addEventListener("click", () => {
-  random();
-});
-
-const boxes = container.querySelectorAll(".grid");
+randomColors.onclick = () => random();
 
 function black() {
+  const boxes = container.querySelectorAll(".grid");
+
   boxes.forEach((box) => {
     box.addEventListener("mouseover", (event) => {
       event.target.style.backgroundColor = "black";
@@ -58,6 +54,7 @@ function black() {
 }
 
 function random() {
+  const boxes = container.querySelectorAll(".grid");
   boxes.forEach((box) => {
     box.addEventListener("mouseover", (event) => {
       const red = Math.floor(Math.random() * 255);
