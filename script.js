@@ -2,6 +2,7 @@ const container = document.querySelector(".container");
 const grids = document.querySelector(".grid-val");
 const blackColor = document.querySelector(".black-color");
 const randomColors = document.querySelector(".random-colors");
+const shadeColors = document.querySelector(".shade-colors");
 
 createGrids(16);
 
@@ -42,6 +43,18 @@ function removeGrids() {
 blackColor.onclick = () => black();
 
 randomColors.onclick = () => random();
+
+shadeColors.onclick = () => {
+  const boxes = container.querySelectorAll(".grid");
+  boxes.forEach((box) => {
+    let darkness = 0.0;
+    box.addEventListener("mouseover", (event) => {
+      darkness += 0.1;
+      console.log(darkness);
+      event.target.style.backgroundColor = `rgba(0, 0 , 0, ${darkness})`;
+    });
+  });
+};
 
 function black() {
   const boxes = container.querySelectorAll(".grid");

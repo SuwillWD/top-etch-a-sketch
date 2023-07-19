@@ -31,7 +31,8 @@ body {
 
 .grid-val,
 .random-colors,
-.black-color {
+.black-color,
+.shade-colors {
   padding: 10px 20px;
   font-size: 18px;
   color: white;
@@ -39,6 +40,8 @@ body {
 }
 
 .grid-val:hover,
-.random-colors:hover {
+.random-colors:hover,
+.black-color:hover,
+.shade-colors:hover {
   box-shadow: 0 0 10px black;
 }
