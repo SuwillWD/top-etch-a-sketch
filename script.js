@@ -3,6 +3,8 @@ const grids = document.querySelector(".grid-val");
 const blackColor = document.querySelector(".black-color");
 const randomColors = document.querySelector(".random-colors");
 const shadeColors = document.querySelector(".shade-colors");
+const eraser = document.querySelector(".eraser");
+const eraseBoard = document.querySelector(".erase");
 
 createGrids(16);
 
@@ -42,6 +44,8 @@ function removeGrids() {
 
 blackColor.onclick = () => black();
 
+eraser.onclick = () => white();
+
 randomColors.onclick = () => random();
 
 shadeColors.onclick = () => {
@@ -66,6 +70,16 @@ function black() {
   });
 }
 
+function white() {
+  const boxes = container.querySelectorAll(".grid");
+
+  boxes.forEach((box) => {
+    box.addEventListener("mouseover", (event) => {
+      event.target.style.backgroundColor = "white";
+    });
+  });
+}
+
 function random() {
   const boxes = container.querySelectorAll(".grid");
   boxes.forEach((box) => {
@@ -77,3 +91,7 @@ function random() {
     });
   });
 }
+
+eraseBoard.onclick = () => {
+  location.reload();
+};

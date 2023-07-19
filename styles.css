@@ -42,7 +42,9 @@ body h1 {
 .grid-val,
 .random-colors,
 .black-color,
-.shade-colors {
+.shade-colors,
+.erase,
+.eraser {
   padding: 10px 20px;
   font-size: 18px;
   color: white;
