@@ -9,3 +9,6 @@ Welcome to this project! This is a browser version of something between a sketch
 - Marker that generates random colors or "Ranbow Marker"
 - Shade Mode for getting different shades with black Marker
 - Eraser & an option for erasing complete board
+
+## Live Preview
+View website live [here](https://suwillwd.github.io/top-etch-a-sketch/)
